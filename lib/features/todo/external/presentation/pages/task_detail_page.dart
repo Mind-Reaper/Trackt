@@ -49,9 +49,7 @@ class _TaskDetailPageState extends ConsumerState<TaskDetailPage> {
         description: descriptionController.text,
         sectionId: sectionId ?? task.sectionId);
     await projectNotifier
-        .updateTask(
-      taskUpdate,
-    )
+        .updateTask(taskUpdate, move: sectionId != null)
         .then((success) {
       projectNotifier.hideLoader();
       if (success) {
