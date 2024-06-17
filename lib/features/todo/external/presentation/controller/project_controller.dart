@@ -224,6 +224,7 @@ class ProjectController extends StateNotifier<ProjectState> {
     final user = User.current();
     final result = await deleteCommentUseCase.call(Pair(commentId, user));
     final deletedCommentId = result.fold((l) => null, (r) => r);
+    getSectionsTasks();
     return deletedCommentId;
   }
 
@@ -231,6 +232,8 @@ class ProjectController extends StateNotifier<ProjectState> {
     final user = User.current();
     final result = await createCommentUseCase.call(Pair(comment, user));
     final createdComment = result.fold((l) => null, (r) => r);
+    getSectionsTasks();
     return createdComment;
+
   }
 }

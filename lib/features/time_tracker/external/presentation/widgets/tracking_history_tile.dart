@@ -32,8 +32,9 @@ class TrackingHistoryTile extends StatelessWidget {
             Text('Total Time: ${totalElapsed.toFormattedString()}',
                 style:
                     const TextStyle(fontSize: 16, fontWeight: FontWeight.w500)),
-            Text(
-                'Completed at: ${DateFormat('MMMM dd, yyyy ==== hh:mm a').format(trackers.first.endTime!)}')
+            if (trackers.isNotEmpty)
+              Text(
+                  'Completed at: ${DateFormat('MMMM dd, yyyy ==== hh:mm a').format(trackers.first.endTime!)}')
           ],
         ));
   }
