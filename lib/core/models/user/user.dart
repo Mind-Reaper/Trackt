@@ -14,6 +14,7 @@ class User with _$User {
   factory User.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);
 
   factory User.current() {
-    return const User(accessToken: '22563bbb07008cbb040481602f1bd9c88354b78c');
+    //TODO: INPUT ACCESS TOKEN HERE
+    return const User(accessToken: '');
   }
 }
